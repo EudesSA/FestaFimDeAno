@@ -6,4 +6,5 @@
     <string name="nao">NÃO CONFIRMADO</string>
     <string name="confirmado">SIM</string>
     <string name="nao_confirmado">NÃO</string>
+    <string name="dias">dias</string>
 </resources>

@@ -11,10 +11,14 @@ import com.example.festafimdeano.Contantes.FimDeAnoConstants;
 import com.example.festafimdeano.R;
 import com.example.festafimdeano.Util.SecurityPrefences;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private  ViewHolder mViewHolder = new ViewHolder();
     private SecurityPrefences mSecurityPrefences;
+    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("DD,MM,AAAA");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         this.mViewHolder.buttonConfirmar.setOnClickListener(this);
         this.mSecurityPrefences =  new SecurityPrefences(this);
+
+        this.mViewHolder.textDias.setText(SIMPLE_DATE_FORMAT.format(Calendar.getInstance().getTime()));
+
+        String diasRestantes = String.format("%s %s",String.valueOf(this.getDiasRestantes()),getString(R.string.dias));
+
+        this.mViewHolder.textRestantes.setText(diasRestantes);
 
     }
 
@@ -63,6 +73,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra(FimDeAnoConstants.PRESENSE,presence);
             startActivity(intent);
         }
+    }
+    private int getDiasRestantes(){
+        Calendar calendarioHoje = Calendar.getInstance();
+        int hoje = calendarioHoje.get(Calendar.DAY_OF_YEAR);
+        Calendar calendariUltimoDiaAno = Calendar.getInstance();
+        int ultimoDiaAno = calendariUltimoDiaAno.getActualMaximum(Calendar.DAY_OF_YEAR);
+
+        return ultimoDiaAno - hoje;
+
     }
     private void verifyPresence(){
         String presence = this.mSecurityPrefences.getStoredString(FimDeAnoConstants.PRESENSE);
