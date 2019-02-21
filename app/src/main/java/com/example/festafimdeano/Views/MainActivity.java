@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private  ViewHolder mViewHolder = new ViewHolder();
     private SecurityPrefences mSecurityPrefences;
-    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("DD,MM,yyyy");
+    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
