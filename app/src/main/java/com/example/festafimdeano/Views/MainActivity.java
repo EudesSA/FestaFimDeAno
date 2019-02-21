@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private  ViewHolder mViewHolder = new ViewHolder();
     private SecurityPrefences mSecurityPrefences;
-    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("DD,MM,AAAA");
+    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("DD,MM,yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         this.mViewHolder.textDias.setText(SIMPLE_DATE_FORMAT.format(Calendar.getInstance().getTime()));
 
-        String diasRestantes = String.format("%s %s",String.valueOf(this.getDiasRestantes()),getString(R.string.dias));
+        String Dias_restantes = String.format("%s %s",String.valueOf(this.getDiasRestantes()),getString(R.string.dias));
 
-        this.mViewHolder.textRestantes.setText(diasRestantes);
+        this.mViewHolder.textRestantes.setText(Dias_restantes);
 
     }
 
