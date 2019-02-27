@@ -22,9 +22,9 @@ public class Detalhes extends AppCompatActivity implements View.OnClickListener 
         // Desativa nome do Aplicativo no Topo.
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        //Mostrar icone no lugar de Texto
+        //Mostrar icone no lugar de Texto.
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        //Define qual icone vai aparecer
+        //Define qual icone vai aparecer.
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
 
