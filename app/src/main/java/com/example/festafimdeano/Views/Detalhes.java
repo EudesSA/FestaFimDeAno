@@ -19,6 +19,15 @@ public class Detalhes extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes);
 
+        // Desativa nome do Aplicativo no Topo.
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        //Mostrar icone no lugar de Texto
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //Define qual icone vai aparecer
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+
         this.mSecurityPrefences = new SecurityPrefences(this);
 
         this.mViewHolder.check_participar = findViewById(R.id.checkParticipar);

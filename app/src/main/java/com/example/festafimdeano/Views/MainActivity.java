@@ -25,6 +25,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Desativa nome do Aplicativo no Topo.
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        //Mostrar icone no lugar de Texto
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //Define qual icone vai aparecer
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+
+
         this.mViewHolder.textDias = findViewById(R.id.dataHoje);
         this.mViewHolder.textRestantes = findViewById(R.id.diasRestantes);
         this.mViewHolder.buttonConfirmar = findViewById(R.id.button_confirmar);
